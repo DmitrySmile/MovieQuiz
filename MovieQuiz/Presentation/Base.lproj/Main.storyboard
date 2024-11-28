@@ -111,6 +111,8 @@
                         <outlet property="CounterLabel" destination="8eL-kn-UTh" id="RqD-Dn-eQu"/>
                         <outlet property="FilmImageView" destination="zer-Bd-qTu" id="ug5-2S-9ig"/>
                         <outlet property="QuestionLabel" destination="qiQ-xo-0TQ" id="bJK-nD-sS7"/>
+                        <outlet property="noButton" destination="ck5-qN-KF0" id="339-jp-bVG"/>
+                        <outlet property="yesButton" destination="qwl-gm-Hf4" id="L2T-cQ-TSe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

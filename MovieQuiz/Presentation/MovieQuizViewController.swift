@@ -23,6 +23,8 @@ final class MovieQuizViewController: UIViewController {
     @IBOutlet private weak var questionLabel: UILabel!
     @IBOutlet private weak var counterLabel: UILabel!
     @IBOutlet private weak var filmImageView: UIImageView!
+    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet weak var yesButton: UIButton!
     
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
@@ -109,6 +111,9 @@ final class MovieQuizViewController: UIViewController {
     }
     
     private func showNextQuestionOrResults() {
+        yesButton.isUserInteractionEnabled = true
+        noButton.isUserInteractionEnabled = true
+        
         if currentQuestionIndex == questions.count - 1 {
             let text = "Ваш результат: \(correctAnswers)/10"
             let viewModel = QuizResultsViewModel(
@@ -149,12 +154,16 @@ final class MovieQuizViewController: UIViewController {
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = true
         
+        yesButton.isUserInteractionEnabled = false
+        
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
     @IBAction private func NoButtonClicked(_ sender: UIButton) {
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = false
+        
+        noButton.isUserInteractionEnabled = false
         
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
